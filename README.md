@@ -11,19 +11,25 @@ TODO: Write short description here and embulk-input-localfile.gemspec file.
 
 ## Configuration
 
-- **option1**: description (integer, required)
-- **option2**: description (string, default: `"myvalue"`)
-- **option3**: description (string, default: `null`)
+- **dir**: description (string, default: `"."`)
+- **recurse**: description (bool, default: `false`)
+- **fileonly**: description (bool, default: `false`)
+- **filter**: description (string, default: `"*"`)
 
 ## Example
 
 ```yaml
-in:
   type: localfile
-  option1: example1
-  option2: example2
+  dir: /path/to/dir
+  recurse: true
+  fileonly: true
+  filter: csv
+  columns:
+    - { name: name, type: string }
+    - { name: dir, type: string }
+    - { name: size, type: long }
+    - { name: timestamp, type: timestamp }
 ```
-
 
 ## Build
 
