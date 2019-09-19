@@ -11,10 +11,10 @@ TODO: Write short description here and embulk-input-localfile.gemspec file.
 
 ## Configuration
 
-- **dir**: description (string, default: `"."`)
-- **recurse**: description (bool, default: `false`)
-- **fileonly**: description (bool, default: `false`)
-- **filter**: description (string, default: `"*"`)
+- **dir**: target root dir (string, default: `"."`)
+- **recurse**: search sub-directory (bool, default: `false`)
+- **fileonly**: search file only (bool, default: `false`)
+- **filter**: file filter ex. *.csv (string, default: `"*"`)
 
 ## Example
 
