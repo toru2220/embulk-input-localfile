@@ -15,9 +15,10 @@ module Embulk
 
         columns = [
           Column.new(0, "filename", :string),
-          Column.new(1, "dirname", :string),
-          Column.new(2, "size", :long),
-          Column.new(3, "date", :timestamp),
+          Column.new(1, "basename", :string),
+          Column.new(2, "dirname", :string),
+          Column.new(3, "size", :long),
+          Column.new(4, "date", :timestamp),
         ]
 
         threads = 1
@@ -71,7 +72,7 @@ module Embulk
           
           s = File::stat(f)
 
-          @page_builder.add([File::basename(f), File::dirname(f), s.size,s.mtime])
+          @page_builder.add([File.absolute_path(f), File::basename(f), File::dirname(f), s.size,s.mtime])
 
         }
 
